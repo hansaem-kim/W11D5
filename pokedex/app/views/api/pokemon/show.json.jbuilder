@@ -5,7 +5,18 @@ json.pokemon do
 end
 
 json.moves do
-    json.set! @pokemon.id do
-        json.extract! @pokemon.moves, :id, :name
+    @pokemon.moves.each do |move|
+        json.set! move.id do
+            json.extract! move, :id, :name
+        end
     end
 end
+
+json.items do
+    @pokemon.items.each do |item|
+        json.set! item.id do
+            json.extract! item, :id, :pokemon_id, :name, :price, :happiness, :image_url
+        end
+    end
+end
+
