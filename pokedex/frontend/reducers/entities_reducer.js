@@ -1,11 +1,8 @@
 import { combineReducers } from "redux";
-// import sipsReducer from "./sips_reducer";
-
+import pokemonReducer from './pokemon_reducer'
 
 const entitiesReducer = combineReducers({
-  // this reducer is just like another root reducer
-  sips: sipsReducer,
-  users: usersReducer
+  pokemon: pokemonReducer,
 });
 
 
